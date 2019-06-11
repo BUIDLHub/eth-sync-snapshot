@@ -1,6 +1,6 @@
 {
   "name": "eth-sync-snapshot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "BUIDLHub implementation of an eth-sync snapshot provider.",
   "main": "dist/index.js",
   "scripts": {
@@ -43,9 +43,9 @@
     "mocha": "^6.1.4"
   },
   "dependencies": {
-    "axios": "^0.19.0",
     "braces": "^3.0.2",
     "debug": "^4.1.1",
+    "fetch": "^1.1.0",
     "yup": "^0.27.0"
   }
 }

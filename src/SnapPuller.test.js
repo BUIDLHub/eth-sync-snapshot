@@ -20,5 +20,5 @@ describe("SnapPuller", ()=>{
         done();
       });
     })
-  });
+  }).timeout(10000);
 });

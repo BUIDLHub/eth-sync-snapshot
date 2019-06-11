@@ -1,7 +1,8 @@
-import axios from 'axios';
+import {FetchStream} from 'fetch';
 import * as yup from 'yup';
 import stream from 'stream';
 import Logger from './Logger';
+
 
 const log = new Logger({component: "SnapPuller"});
 
@@ -21,17 +22,11 @@ export default class SnapPuller {
   }
 
   download() {
-    return axios({
-      url: this.url,
-      method: "GET",
-      responseType: "stream"
-    }).then(resp=>{
+    return new Promise((done)=>{
+      let fetch = new FetchStream(this.url);
       let s = stream.PassThrough();
-      resp.data.pipe(s);
-      return s;
-    }).catch(e=>{
-      log.error("Problem download snapshot", e);
-      return null;
+      fetch.pipe(s);
+      done(s);
     });
   }
 }
