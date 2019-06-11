@@ -9,6 +9,6 @@ export default class BHubSnapProvider {
   }
 
   getLatest() {
-    return puller.download();
+    return this.puller.download();
   }
 }
