@@ -23,7 +23,7 @@ export default class SnapPuller {
 
   download() {
     return new Promise((done)=>{
-      let fetch = new FetchStream(this.url);
+      let fetch = new FetchStream(this.url, {mode: 'cors'});
       let s = stream.PassThrough();
       fetch.pipe(s);
       done(s);
