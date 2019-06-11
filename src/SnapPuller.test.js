@@ -1,5 +1,6 @@
 import Puller from './SnapPuller';
 
+//example for cryptokitties
 const SNAP_ID = "9NlPQmsBUKbb9uKfcoy2"
 describe("SnapPuller", ()=>{
   it("Should pull snap file", done=>{
